@@ -1,0 +1,19 @@
+{
+  "name": "inflect",
+  "description": "A port of the Rails / ActiveSupport inflector to JavaScript (node.js and browser compatible).",
+  "version": "0.3.0",
+  "repo": "bloodhound/inflect",
+  "author": "Stefan Huber <MSNexploder@gmail.com>",
+  "homepage": "http://github.com/bloodhound/inflect/",
+  "main": "./client/index.js",
+  "scripts": [
+    "client/index.js",
+    "client/inflect/default_inflections.js",
+    "client/inflect/index.js",
+    "client/inflect/inflections.js",
+    "client/inflect/methods.js",
+    "client/inflect/number_extensions.js",
+    "client/inflect/string_extensions.js"
+  ],
+  "license": "MIT"
+}
