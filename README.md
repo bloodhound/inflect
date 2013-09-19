@@ -4,11 +4,13 @@ A port of the Rails / ActiveSupport inflector to JavaScript (node.js and browser
 
 ## Install
 
+#### Node.js
+
     npm install inflect
 
-[Client version](https://raw.github.com/MSNexploder/inflect/master/client/inflect.js)
+#### Browser
 
-[Client version (minified)](https://raw.github.com/MSNexploder/inflect/master/client/inflect.min.js)
+    component install MSNexploder/inflect
 
 ## Documentation
 
