@@ -2,7 +2,7 @@
   "name": "inflect",
   "description": "A port of the Rails / ActiveSupport inflector to JavaScript (node.js and browser compatible).",
   "version": "0.3.0",
-  "repo": "bloodhound/inflect",
+  "repo": "MSNexploder/inflect",
   "author": "Stefan Huber <MSNexploder@gmail.com>",
   "homepage": "http://github.com/bloodhound/inflect/",
   "main": "./client/index.js",
