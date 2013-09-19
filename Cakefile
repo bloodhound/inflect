@@ -49,34 +49,10 @@ task "install", "Install inflect in your local repository", ->
 
 ## Building ##
 
-build = (callback) ->
-  log "Compiling CoffeeScript to JavaScript ...", green
-  exec "rm -rf lib && coffee -c -l -b -o lib src", ->
-    log "Building client side script ...", green
-    data_plain = "window.inflect = require('./inflect');"
-    buildClient 'inflect', data_plain, callback
-task "build", "Compile CoffeeScript to JavaScript", -> build onerror
-
 task "watch", "Continously compile CoffeeScript to JavaScript", ->
   cmd = spawn("coffee", ["-c", "-l", "-b", "-w", "-o", "lib", "src"])
   cmd.stdout.on "data", (data) -> process.stdout.write green + data + reset
   cmd.on "error", onerror
-
-buildClient = (name, data, callback) ->
-  browserify = require('browserify')
-  jsp = require("uglify-js").parser
-  pro = require("uglify-js").uglify
-
-  b = browserify()
-  b.addEntry path.join(__dirname, 'src/index.coffee')
-  b.append data
-
-  fs.writeFile "client/#{name}.js", b.bundle(), ->
-    ast = jsp.parse b.bundle()
-    ast = pro.ast_mangle ast
-    ast = pro.ast_squeeze ast
-
-    fs.writeFile "client/#{name}.min.js", pro.gen_code(ast), callback
 
 
 clean = (callback) ->
